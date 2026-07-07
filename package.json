@@ -1,6 +1,6 @@
 {
   "name": "@myko.pk/types",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Shared TypeScript types for MYKOPK packages",
   "type": "module",
   "exports": {

@@ -107,6 +107,8 @@ export interface QueryOptions<TRecord extends object = object> {
   select?: Record<string, boolean | { select: Record<string, boolean> }>;
   /** Relations to include. Supports nested include for relations. */
   include?: Record<string, boolean | { include: Record<string, any> }>;
+  /** Raw SQL conditions to append to the WHERE clause. Each condition has a clause with $N placeholders and matching params. */
+  rawConditions?: Array<{ clause: string; params: unknown[]; logical?: 'and' | 'or' }>;
 }
 
 /**
