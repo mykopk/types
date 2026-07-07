@@ -48,7 +48,8 @@ export interface BaseAdapter {
  */
 export interface DrizzleAdapterConfig extends BaseAdapter {
   adapter: ADAPTERS.DRIZZLE;
-  // Drizzle-specific properties can be added here if needed
+  /** Enable Drizzle ORM query logging (logs all SQL queries) */
+  logging?: boolean;
 }
 
 /**

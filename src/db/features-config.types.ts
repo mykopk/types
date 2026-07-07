@@ -225,11 +225,15 @@ export interface DrizzleConfig {
   connectionString?: string;
   url?: string;
   poolSize?: number;
+  /** Connection pool configuration (overrides poolSize if both set) */
+  pool?: PoolConfig;
   ssl?: boolean;
   /** Default schema for all tables (e.g., 'test', 'public') */
   schema?: string;
   /** Table ID column mappings for auto-detection */
   tableIdColumns?: Record<string, string>;
+  /** Enable Drizzle ORM query logging */
+  logging?: boolean;
 }
 
 export interface SupabaseConfig {

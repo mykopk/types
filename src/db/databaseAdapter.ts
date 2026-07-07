@@ -46,7 +46,7 @@
  *
  */
 
-import type { DatabaseResult, QueryOptions, Filter, DatabaseHealthStatus, FindFirstOptions } from './database.types';
+import type { DatabaseResult, QueryOptions, Filter, DatabaseHealthStatus, FindFirstOptions, PoolMetrics } from './database.types';
 import type { PaginatedResult } from './databsePagination';
 import type { Transaction } from './Transaction';
 
@@ -272,4 +272,12 @@ export interface DatabaseAdapterType {
    * Used to unwrap nested adapters to access the base adapter
    */
   baseAdapter?: DatabaseAdapterType;
+
+  /**
+   * Get connection pool metrics for observability
+   * @returns PoolMetrics with total/idle/waiting counts, or null if not available
+   */
+  getPoolMetrics?(): PoolMetrics | null;
 }
+
+
